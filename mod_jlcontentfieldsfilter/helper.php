@@ -196,27 +196,18 @@ class ModJlContentFieldsFilterHelper
 		$options = array();
 		if($option == 'com_content'){
 			$options[] = JHtml::_('select.option', '', JText::_('MOD_JLCONTENTFIELDSFILTER_ORDERING_DEFAULT'));
-			$options[] = JHtml::_('select.option', 'ordering.asc', JText::_('MOD_JLCONTENTFIELDSFILTER_ORDERING_ASC'));
-			$options[] = JHtml::_('select.option', 'ordering.desc', JText::_('MOD_JLCONTENTFIELDSFILTER_ORDERING_DESC'));
-			$options[] = JHtml::_('select.option', 'title.asc', JText::_('MOD_JLCONTENTFIELDSFILTER_TITLE_ASC'));
-			$options[] = JHtml::_('select.option', 'title.desc', JText::_('MOD_JLCONTENTFIELDSFILTER_TITLE_DESC'));
-			$options[] = JHtml::_('select.option', 'created.asc', JText::_('MOD_JLCONTENTFIELDSFILTER_CREATED_ASC'));
-			$options[] = JHtml::_('select.option', 'created.desc', JText::_('MOD_JLCONTENTFIELDSFILTER_CREATED_DESC'));
-			$options[] = JHtml::_('select.option', 'created_by.asc', JText::_('MOD_JLCONTENTFIELDSFILTER_CREATED_BY_ASC'));
-			$options[] = JHtml::_('select.option', 'created_by.desc', JText::_('MOD_JLCONTENTFIELDSFILTER_CREATED_BY_DESC'));
-			$options[] = JHtml::_('select.option', 'hits.asc', JText::_('MOD_JLCONTENTFIELDSFILTER_HITS_ASC'));
-			$options[] = JHtml::_('select.option', 'hits.desc', JText::_('MOD_JLCONTENTFIELDSFILTER_HITS_DESC'));
+			$options[] = JHtml::_('select.option', 'ordering', JText::_('MOD_JLCONTENTFIELDSFILTER_ORDERING_ASC'));
+			$options[] = JHtml::_('select.option', 'title', JText::_('MOD_JLCONTENTFIELDSFILTER_TITLE_ASC'));
+			$options[] = JHtml::_('select.option', 'created', JText::_('MOD_JLCONTENTFIELDSFILTER_CREATED_DESC'));
+			$options[] = JHtml::_('select.option', 'created_by', JText::_('MOD_JLCONTENTFIELDSFILTER_CREATED_BY_DESC'));
+			$options[] = JHtml::_('select.option', 'hits', JText::_('MOD_JLCONTENTFIELDSFILTER_HITS_DESC'));
 		}
 		else if($option == 'com_contact'){
 			$options[] = JHtml::_('select.option', '', JText::_('MOD_JLCONTENTFIELDSFILTER_ORDERING_DEFAULT'));
-			$options[] = JHtml::_('select.option', 'ordering.asc', JText::_('MOD_JLCONTENTFIELDSFILTER_ORDERING_ASC'));
-			$options[] = JHtml::_('select.option', 'ordering.desc', JText::_('MOD_JLCONTENTFIELDSFILTER_ORDERING_DESC'));
-			$options[] = JHtml::_('select.option', 'name.asc', JText::_('MOD_JLCONTENTFIELDSFILTER_NAME_ASC'));
-			$options[] = JHtml::_('select.option', 'name.desc', JText::_('MOD_JLCONTENTFIELDSFILTER_NAME_DESC'));
-			$options[] = JHtml::_('select.option', 'position.asc', JText::_('MOD_JLCONTENTFIELDSFILTER_POSITION_ASC'));
-			$options[] = JHtml::_('select.option', 'position.desc', JText::_('MOD_JLCONTENTFIELDSFILTER_POSITION_DESC'));
-			$options[] = JHtml::_('select.option', 'hits.asc', JText::_('MOD_JLCONTENTFIELDSFILTER_HITS_ASC'));
-			$options[] = JHtml::_('select.option', 'hits.desc', JText::_('MOD_JLCONTENTFIELDSFILTER_HITS_DESC'));
+			$options[] = JHtml::_('select.option', 'ordering', JText::_('MOD_JLCONTENTFIELDSFILTER_ORDERING_DESC'));
+			$options[] = JHtml::_('select.option', 'name', JText::_('MOD_JLCONTENTFIELDSFILTER_NAME_DESC'));
+			$options[] = JHtml::_('select.option', 'position', JText::_('MOD_JLCONTENTFIELDSFILTER_POSITION_DESC'));
+			$options[] = JHtml::_('select.option', 'hits', JText::_('MOD_JLCONTENTFIELDSFILTER_HITS_DESC'));
 		}
 
 		$basePath = is_file(JPATH_ROOT.'/templates/'.$template.'/html/layouts/mod_jlcontentfieldsfilter/ordering.php')
@@ -229,7 +220,8 @@ class ModJlContentFieldsFilterHelper
 			$basePath,
 			array('component' => 'auto', 'client' => 0)
 		);
-
+		
+		$html .= "<input class='toggle' id='cb1' name='cb1' type='checkbox' >" ;
 		return $html;
 	}
 
