@@ -18,5 +18,5 @@
 			<folder type="file" id="file_jlcomponent_ajax" method="upgrade" client="site">file_jlcomponent_ajax</folder>			
 		</files>
 
-    <updateservers><server type="extension" priority="1" name="JL Content Fields Filter">https://joomline.net/update.html?extension_id=5.xml</server></updateservers>
+    <updateservers><server type="extension" priority="1" name="JL Content Fields Filter">https://raw.githubusercontent.com/todarogiovanni1980/JlContentFieldsFilter/orderingdirection/update.xml</server></updateservers>
 </extension>
