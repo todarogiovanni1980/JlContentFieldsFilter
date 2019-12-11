@@ -4,7 +4,7 @@ Modulo di filtro contenuti Joomla per campi aggiuntivi. Supporta tipi di campi t
 Official page: [RU](https://joomline.ru/rasshirenija/moduli/jlcontentfieldsfilter.html) - [EN](http://joomline.org/extensions/modules-for-joomla/jlcontentfieldsfilter.html)
 
 
-## installazione
+## Installazione
 
 Fino alla creazione del kit di distribuzione, è possibile crearlo e installare il modulo e il plug-in da soli. Per fare ciò, scarica il ramo master (archivio), installa l'archivio risultante, pubblica il plugin, pubblica e configura il modulo.
 
