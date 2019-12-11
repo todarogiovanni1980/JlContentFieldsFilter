@@ -121,7 +121,22 @@ class ModJlContentFieldsFilterHelper
 		      ->where('`field_id` ='.(int)$field->id)
 		;
 		$subquery = '';
-		if($option == 'com_content')
+
+		if($option == 'com_tags'){
+		    $tagIds = JFactory::getApplication()->input->get('id', array(), 'array');
+		    if(!is_array($tagIds)){
+                $tagIds = array((int)$tagIds);
+            }
+            $tagIds = implode(', ', $tagIds);
+            $q = $db->getQuery(true);
+            $q->select('content_item_id')
+                ->from('#__contentitem_tag_map')
+                ->where('type_alias = '.$db->quote('com_content.article'))
+                ->where('tag_id IN('.$tagIds.')')
+            ;
+            $subquery = (string)$q;
+        }
+		else if($option == 'com_content')
 		{
             $params = JComponentHelper::getParams('com_content');
             $showSubcategories = $params->get('show_subcategory_content', '0');
@@ -217,4 +232,16 @@ class ModJlContentFieldsFilterHelper
 
 		return $html;
 	}
+
+	public static function countCatArticles($catid){
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('COUNT(*)')
+            ->from('`#__content`')
+            ->where('`catid` ='.(int)$catid)
+            ->where('`state` = 1')
+        ;
+
+        return $db->setQuery($query)->loadResult();
+    }
 }

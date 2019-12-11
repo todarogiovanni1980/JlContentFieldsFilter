@@ -9,12 +9,14 @@
  */
 
 defined('_JEXEC') or die;
-
-JHtml::_('jquery.framework');
-
 $doc = JFactory::getDocument();
+if ($params->get('enable_no_jq', 0)) {
+	JHtml::_('jquery.framework');
+	$doc->addScript(JUri::root().'modules/mod_jlcontentfieldsfilter/assets/javascript/jlcontentfilter.js', array('version' => 'auto'));
+} else {
+	$doc->addScript(JUri::root().'modules/mod_jlcontentfieldsfilter/assets/javascript/nojq_jlcontentfilter.js', array('version' => 'auto'));
+}
 
-$doc->addScript(JUri::root().'modules/mod_jlcontentfieldsfilter/assets/javascript/jlcontentfilter.js', array('version' => 'auto'));
 $doc->addScriptDeclaration('
 	JlContentFieldsFilter.init({
 		"autho_send" : '.$autho_send.',
@@ -55,5 +57,8 @@ if ($params->get('enable_css', 1)) {
 		</div>
 
 	</div>
+    <?php if($option == 'com_tags'){ ?>
+    <input type="hidden" name="tag_category_id" value="<?php echo $catid; ?>">
+    <?php } ?>
     <input type="hidden" name="jlcontentfieldsfilter[is_filter]" value="1">
 </form>
