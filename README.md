@@ -1,5 +1,5 @@
 # JlContentFieldsFilter
-Модуль фильтрации материалов Joomla по дополнительным полям. Поддерживает типы полей text, radio, list, checkboxes.
+Modulo di filtro contenuti Joomla per campi aggiuntivi. Supporta tipi di campi testo, radio, elenco, caselle di controllo.
 
 Official page: [RU](https://joomline.ru/rasshirenija/moduli/jlcontentfieldsfilter.html) - [EN](http://joomline.org/extensions/modules-for-joomla/jlcontentfieldsfilter.html)
 
